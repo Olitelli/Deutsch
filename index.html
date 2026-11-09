@@ -2,13 +2,99 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Lesespurgeschichten</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eaf5f3">
+<title>Lesespur-Abenteuer – Lesen, suchen, entdecken!</title>
+<style>
+:root{--ink:#203b49;--muted:#5c737c;--teal:#287f7a;--teal-dark:#1e625f;--cream:#fffdf7;--line:#dce9e5}
+*{box-sizing:border-box}
+body{margin:0;background:#f1f7f5;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;line-height:1.55}
+a{color:inherit}
+.page{max-width:1000px;margin:0 auto;padding:28px 22px 42px}
+.hero{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(135deg,#dff1ec 0%,#eef5fa 60%,#fff1e7 100%);padding:clamp(28px,6vw,58px);display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center;box-shadow:0 12px 35px #315b5512}
+.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid #c6ded8;background:#ffffffa8;border-radius:999px;padding:7px 13px;font-size:.82rem;font-weight:800;letter-spacing:.04em;color:var(--teal-dark)}
+h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:18px 0 16px;max-width:620px}
+.hero p{font-size:1.1rem;color:#46616b;max-width:570px;margin:0}
+.hero-art{width:100%;max-width:290px;justify-self:center;filter:drop-shadow(0 12px 12px #315b5515)}
+.section-title{font-size:1.55rem;letter-spacing:-.025em;margin:38px 0 8px}
+.intro{color:var(--muted);margin:0 0 20px}
+.story{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 8px 24px #315b550a;transition:transform .18s,box-shadow .18s}
+.story:hover{transform:translateY(-3px);box-shadow:0 14px 30px #315b5517}
+.story-art{min-height:160px;border-radius:18px;background:linear-gradient(145deg,#fff0d7,#fce4d8);display:grid;place-items:center}
+.story-art svg{width:145px;height:145px}
+.tag{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8b6540;background:#fff0d7;border-radius:999px;padding:5px 10px}
+.story h3{font-size:1.45rem;margin:10px 0 6px}
+.story p{color:var(--muted);margin:0 0 15px}
+.go{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--teal);color:white;font-weight:800;padding:11px 17px;border-radius:13px;box-shadow:0 4px 0 var(--teal-dark);transition:transform .15s,background .15s}
+.go:hover{background:var(--teal-dark);transform:translateY(-1px)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.step .num{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#e2f1ed;color:var(--teal-dark);font-weight:900}
+.step h3{font-size:1rem;margin:11px 0 4px}
+.step p{font-size:.92rem;color:var(--muted);margin:0}
+.tip{margin-top:24px;background:#e9f1fb;border:1px solid #d7e4f3;border-radius:18px;padding:17px 20px;color:#3f5b70}
+.tip strong{color:#294b63}
+footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
+@media(max-width:680px){.page{padding:14px}.hero{grid-template-columns:1fr;padding:28px 24px;border-radius:23px}.hero-art{max-width:180px;grid-row:1}.story{grid-template-columns:1fr;gap:15px}.story-art{min-height:135px}.story-art svg{height:125px}.how{grid-template-columns:1fr}.section-title{margin-top:30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
-<h1>Meine Lesespurgeschichten</h1>
-<p>Hier findest du die digitalen Lesespuren.</p>
-<ul>
-<li><a href="Laternenlicht_Lesespur.html">Laternenlicht-Lesespur</a></li>
-</ul>
+<main class="page">
+<header class="hero">
+  <div>
+    <span class="kicker">✦ DEIN NÄCHSTES LESEABENTEUER</span>
+    <h1>Lesen, suchen<br>und entdecken!</h1>
+    <p>Hier warten spannende Lesespuren auf dich. Folge den Hinweisen, knacke kleine Rätsel und finde heraus, wie die Geschichte weitergeht. Bist du bereit?</p>
+  </div>
+  <svg class="hero-art" viewBox="0 0 300 260" role="img" aria-label="Aufgeschlagenes Buch mit Lupe und Sternen">
+    <path d="M25 204Q82 175 148 204Q213 174 275 204V226Q210 197 148 226Q82 197 25 226Z" fill="#b8d9d0"/>
+    <path d="M46 93Q97 73 148 106V204Q98 173 46 190Z" fill="#fffdf7" stroke="#477d78" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M148 106Q201 73 251 93V190Q200 173 148 204Z" fill="#fff8e9" stroke="#477d78" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M148 106V204" stroke="#477d78" stroke-width="4"/>
+    <path d="M67 116Q100 107 127 123M67 137Q100 128 127 144M67 158Q96 151 127 166M169 123Q199 107 231 116M169 144Q198 128 231 137M169 166Q199 151 231 158" fill="none" stroke="#c5d9d2" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="210" cy="66" r="31" fill="#f4b18e" stroke="#a85e48" stroke-width="7"/>
+    <circle cx="210" cy="66" r="18" fill="#fff5e8"/>
+    <path d="M232 89L260 119" stroke="#a85e48" stroke-width="12" stroke-linecap="round"/>
+    <path d="M37 54l5 12 12 5-12 5-5 12-5-12-12-5 12-5zM265 37l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#e8ad51"/>
+    <circle cx="86" cy="48" r="5" fill="#e8ad51"/><circle cx="270" cy="155" r="4" fill="#e8ad51"/>
+  </svg>
+</header>
+<section aria-labelledby="stories">
+  <h2 class="section-title" id="stories">Wähle deine Lesespur</h2>
+  <p class="intro">Such dir eine Geschichte aus und starte direkt. Lies aufmerksam – jeder Hinweis bringt dich ein Stück weiter!</p>
+  <article class="story">
+    <div class="story-art">
+      <svg viewBox="0 0 180 160" role="img" aria-label="Leuchtende Laterne in einer Abendstimmung">
+        <path d="M24 135Q90 117 156 135" fill="none" stroke="#d8b18a" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="90" cy="78" r="57" fill="#f9dca7" opacity=".48"/>
+        <path d="M72 31H108L116 49V112H64V49Z" fill="#f5b75f" stroke="#986b3c" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M72 31Q90 8 108 31M90 13V5M64 50H116M64 110H116" fill="none" stroke="#986b3c" stroke-width="5" stroke-linecap="round"/>
+        <path d="M78 58H102V100H78Z" fill="#fff4c9"/>
+        <path d="M90 63l5 13-5 13-5-13z" fill="#f3b44e"/>
+        <path d="M49 38l4 9 9 4-9 4-4 9-4-9-9-4 9-4zM132 61l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e7a54d"/>
+        <path d="M36 119l8-14 8 14M128 119l8-14 8 14" fill="none" stroke="#8eb7a4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <span class="tag">Lesespur-Abenteuer</span>
+      <h3>Das Geheimnis des Laternenlichts</h3>
+      <p>Ein geheimnisvolles Licht wartet darauf, entdeckt zu werden. Lies die Hinweise ganz genau und finde den richtigen Weg durch die Geschichte. Schaffst du es, das Rätsel zu lösen?</p>
+      <a class="go" href="Laternenlicht_Lesespur.html">Abenteuer starten <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+</section>
+<section aria-labelledby="how">
+  <h2 class="section-title" id="how">So funktioniert's</h2>
+  <p class="intro">Drei kleine Schritte – und schon bist du mitten im Abenteuer.</p>
+  <div class="how">
+    <article class="step"><div class="num">1</div><h3>Aufmerksam lesen</h3><p>Lies den Text und achte auf wichtige Einzelheiten.</p></article>
+    <article class="step"><div class="num">2</div><h3>Hinweise finden</h3><p>Suche die passende Nummer oder den richtigen Ort.</p></article>
+    <article class="step"><div class="num">3</div><h3>Rätsel lösen</h3><p>Folge der Spur bis zum Ziel. Viel Erfolg!</p></article>
+  </div>
+  <aside class="tip"><strong>💡 Detektiv-Tipp:</strong> Lies lieber einmal ganz genau, bevor du dich entscheidest. Wenn du falsch abbiegst, ist das kein Problem – versuche es einfach noch einmal!</aside>
+</section>
+<footer>📚 Auf die Plätze, fertig, losgelesen! · Viel Freude beim Entdecken</footer>
+</main>
 </body>
 </html>
