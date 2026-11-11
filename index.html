@@ -17,7 +17,12 @@ h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;marg
 .hero p{font-size:1.1rem;color:#46616b;max-width:570px;margin:0}
 .hero-art{width:100%;max-width:290px;justify-self:center;filter:drop-shadow(0 12px 12px #315b5515)}
 .section-title{font-size:1.55rem;letter-spacing:-.025em;margin:38px 0 8px}
-.intro{color:var(--muted);margin:0 0 20px}
+.category-heading{display:flex;align-items:center;gap:14px;margin-top:38px}
+.category-heading .section-title{margin:0}
+.category-icon{width:58px;height:58px;flex:0 0 58px;color:#438c78}
+.logical-heading .category-icon{width:64px;height:58px;flex-basis:64px}
+.logical-heading{margin-top:48px}
+.intro{color:var(--muted);margin:10px 0 20px}
 .story{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 8px 24px #315b550a;transition:transform .18s,box-shadow .18s}
 .story:hover{transform:translateY(-3px);box-shadow:0 14px 30px #315b5517}
 .story-art{min-height:160px;border-radius:18px;background:linear-gradient(145deg,#fff0d7,#fce4d8);display:grid;place-items:center}
@@ -35,7 +40,7 @@ h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;marg
 .tip{margin-top:24px;background:#e9f1fb;border:1px solid #d7e4f3;border-radius:18px;padding:17px 20px;color:#3f5b70}
 .tip strong{color:#294b63}
 footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
-@media(max-width:680px){.page{padding:14px}.hero{grid-template-columns:1fr;padding:28px 24px;border-radius:23px}.hero-art{max-width:180px;grid-row:1}.story{grid-template-columns:1fr;gap:15px}.story-art{min-height:135px}.story-art svg{height:125px}.how{grid-template-columns:1fr}.section-title{margin-top:30px}}
+@media(max-width:680px){.category-icon{width:48px;height:48px;flex-basis:48px}.logical-heading .category-icon{width:54px;height:48px;flex-basis:54px}.page{padding:14px}.hero{grid-template-columns:1fr;padding:28px 24px;border-radius:23px}.hero-art{max-width:180px;grid-row:1}.story{grid-template-columns:1fr;gap:15px}.story-art{min-height:135px}.story-art svg{height:125px}.how{grid-template-columns:1fr}.section-title{margin-top:30px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
@@ -61,8 +66,16 @@ footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
   </svg>
 </header>
 <section aria-labelledby="stories">
-  <h2 class="section-title" id="stories">Wähle deine Lesespur</h2>
-  <p class="intro">Such dir eine Geschichte aus und starte direkt. Lies aufmerksam – jeder Hinweis bringt dich ein Stück weiter!</p>
+  <div class="category-heading">
+    <svg viewBox="0 0 72 72" role="img" aria-label="Fußspuren" class="category-icon footprints">
+      <path d="M18 8c-5 1-8 8-7 15 1 6 5 10 9 9 5-1 7-7 6-14-1-7-4-11-8-10Z" fill="currentColor"/>
+      <path d="M44 34c-5 1-8 8-7 15 1 6 5 10 9 9 5-1 7-7 6-14-1-7-4-11-8-10Z" fill="currentColor"/>
+      <circle cx="10" cy="8" r="3" fill="currentColor"/><circle cx="18" cy="3" r="3" fill="currentColor"/><circle cx="27" cy="6" r="3" fill="currentColor"/>
+      <circle cx="36" cy="34" r="3" fill="currentColor"/><circle cx="44" cy="29" r="3" fill="currentColor"/><circle cx="53" cy="32" r="3" fill="currentColor"/>
+    </svg>
+    <h2 class="section-title" id="stories">Lesespurgeschichten</h2>
+  </div>
+  <p class="intro">Folge den Fußspuren durch spannende Geschichten! Lies aufmerksam, entdecke Hinweise und finde den richtigen Weg.</p>
   <article class="story">
     <div class="story-art">
       <svg viewBox="0 0 180 160" role="img" aria-label="Leuchtende Laterne in einer Abendstimmung">
@@ -108,6 +121,24 @@ footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
   </article>
 
 
+
+
+
+<section aria-labelledby="logicals">
+  <div class="category-heading logical-heading">
+    <svg viewBox="0 0 80 72" role="img" aria-label="Gehirn mit Lupe" class="category-icon brain-icon">
+      <path d="M34 13c-5-8-17-5-18 5-8 1-11 11-6 17-5 7-1 17 7 18 1 9 12 12 18 5V15c0-1 0-2-1-2Z" fill="#f4b6a6" stroke="#8c5b61" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M46 13c5-8 17-5 18 5 8 1 11 11 6 17 5 7 1 17-7 18-1 9-12 12-18 5V15c0-1 0-2 1-2Z" fill="#f4b6a6" stroke="#8c5b61" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M26 20c-5 3-4 9 0 11m-9 9c6-2 10 2 8 7m22-27c5 3 4 9 0 11m9 9c-6-2-10 2-8 7M38 16v36" fill="none" stroke="#b8757b" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="59" cy="48" r="12" fill="#fff8e9" stroke="#477d78" stroke-width="4"/>
+      <path d="m68 57 8 8" stroke="#477d78" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <h2 class="section-title" id="logicals">Logicals &amp; Knobelrätsel</h2>
+  </div>
+  <p class="intro">Hier ist dein Knobelkopf gefragt: Kombiniere Hinweise, entdecke Zusammenhänge und finde die einzig richtige Lösung.</p>
+
+  <!-- Neue Logical-Karten bitte innerhalb dieses Abschnitts ergänzen.
+       Eine vorhandene .story-Karte kopieren und Titel, Beschreibung, Bild und href anpassen. -->
   <article class="story">
     <div class="story-art" style="background:linear-gradient(145deg,#f5e9d8,#e5eee6)">
       <span role="img" aria-label="Weihnachtliche Rätsel" style="font-size:6rem">🎄🧩</span>
@@ -119,7 +150,6 @@ footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
       <a class="go" href="weihnachtliche-logicals.html">Abenteuer starten <span aria-hidden="true">→</span></a>
     </div>
   </article>
-
   <article class="story">
     <div class="story-art" style="background:linear-gradient(145deg,#e8e8fb,#e4f4f1)">
       <span role="img" aria-label="Bunte Knobelstücke" style="font-size:6rem">🧩📚</span>
@@ -131,6 +161,7 @@ footer{text-align:center;color:#7a8d91;font-size:.85rem;padding:34px 8px 0}
       <a class="go" href="logical-werkstatt.html">Knobeln starten <span aria-hidden="true">→</span></a>
     </div>
   </article>
+</section>
 </section>
 <section aria-labelledby="how">
   <h2 class="section-title" id="how">So funktioniert's</h2>
